@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #333; }
+        h1 { color: #2c3e50; }
+        form { display: flex; flex-direction: column; }
+        input, textarea { margin-bottom: 10px; padding: 8px; font-size: 14px; }
+        button { width: 100px; padding: 8px; background-color: #2c3e50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/about/">Обо мне</a>
+        <a href="/projects/">Проекты</a>
+        <a href="/contact/">Контакты</a>
+    </nav>
+
+    <h1>Связаться со мной</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Сообщение" required></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>
