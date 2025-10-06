@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<section class="project-section">
+  <div class="project-container">
+    {% if project.photo %}
+      <div class="project-image">
+        <img src="{{ project.photo.url }}" alt="{{ project.name }}">
+      </div>
+    {% endif %}
+
+    <div class="project-info">
+      <h2>{{ project.name }}</h2>
+      <p>{{ project.description }}</p>
+
+      <ul>
+        <li><strong>Technologies:</strong> {{ project.technologies_used }}</li>
+        <li><strong>Start Date:</strong> {{ project.start_date }}</li>
+        {% if project.end_date %}
+          <li><strong>End Date:</strong> {{ project.end_date }}</li>
+        {% endif %}
+      </ul>
+
+      <div class="project-links">
+        <a href="{{ project.github_link }}" target="_blank" rel="noopener">GitHub</a>
+        {% if project.demo_link %}
+          <a href="{{ project.demo_link }}" target="_blank" rel="noopener">Live Demo</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

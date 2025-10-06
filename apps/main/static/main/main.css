@@ -175,4 +175,125 @@ body {
 .socials li a:hover {
   color: #64ffda;
 }
+.no-projects {
+  text-align: center;
+  padding: 50px 20px;
+  color: #0A174E;
+}
 
+.no-projects h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.no-projects p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #555;
+}
+.no-projects-card {
+  max-width: 400px;           /* ширина блока */
+  margin: 100px auto;         /* центр по горизонтали и отступ сверху */
+  padding: 30px;
+  text-align: center;
+  background-color: #F5F042;  /* фон */
+  color: #0A174E;             /* текст */
+  border-radius: 15px;        /* скругление углов */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* тень */
+}
+
+.no-projects-card i {
+  margin-bottom: 20px;
+}
+
+.no-projects-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.no-projects-card p {
+  font-size: 1rem;
+  color: #0A174E;
+}
+
+/* ==== Узкий блок с большим левым и нижним зазором ==== */
+/* Вставь этот блок в конец main.css, заменив старые правила для .project-container */
+
+:root{
+  --project-left-gap: 120px;   /* отступ слева (из стены) */
+  --project-bottom-gap: 200px; /* отступ снизу (вниз) */
+  --project-top-gap: 48px;     /* отступ сверху */
+  --project-max-width: 760px;  /* максимальная ширина блока */
+}
+
+.project-section { display: block; }
+
+/* Основной контейнер проекта */
+.project-section .project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+
+  /* ширина и отступы:
+     margin: top right bottom left;
+     right = auto — чтобы блок занимал левую сторону с заданным left gap */
+  width: min(86%, var(--project-max-width));
+  max-width: var(--project-max-width);
+  margin: var(--project-top-gap) auto var(--project-bottom-gap) var(--project-left-gap);
+  padding: 32px;
+  background: #0A174E;
+  color: #F5F042;
+  border-radius: 10px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Дочерние элементы — блоки */
+.project-section .project-container > * {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 16px 0;
+}
+
+/* Картинка */
+.project-section .project-container .project-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.project-section .project-container .project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 520px;
+}
+
+/* Информация */
+.project-section .project-container .project-info {
+  width: 100%;
+  text-align: left;
+}
+.project-section .project-container .project-info h2 {
+  margin-bottom: 8px;
+  color: #F5F042;
+}
+
+/* Мобильные/узкие экраны — убираем большие боковые отступы и центрируем */
+@media (max-width: 900px) {
+  :root{
+    --project-left-gap: 24px;
+    --project-bottom-gap: 48px;
+    --project-top-gap: 24px;
+  }
+  .project-section .project-container {
+    width: 94%;
+    margin: var(--project-top-gap) auto var(--project-bottom-gap) auto;
+    padding: 20px;
+  }
+  .project-section .project-container .project-info { text-align: center; }
+}

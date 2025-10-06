@@ -13,3 +13,6 @@ class ProjectDetailView(DetailView):
     model = Project
     template_name = "projects/project_detail.html"  
     context_object_name = "project"
+    
+
+

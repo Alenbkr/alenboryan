@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Alen Boryan{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'main/main.css' %}" />
+  <!-- Font Awesome для иконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Навигация -->
+  <header class="header">
+    <nav class="nav">
+      <ul class="nav__list">
+         <li><a href="{% url 'main' %}">01. Home</a></li>
+         <li><a href="{% url 'projects' %}">02. Projects</a></li>
+         <li><a href="{% url 'contact' %}">03. Contact</a></li>
+         <li><a href="{% url 'about' %}">04. About</a></li>
+      </ul>
+      <a href="#" class="btn resume-btn">Resume</a>
+    </nav>
+  </header>
+
+  <!-- Основной контент страницы -->
+  <main>
+    {% block content %}
+    <!-- Здесь будет уникальный контент каждой страницы -->
+    {% endblock %}
+  </main> <!-- <<--- ОБЯЗАТЕЛЬНО закрыть main -->
+
+  <!-- Социальные сети слева -->
+  <div class="socials">
+    <ul>
+      <li><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+      <li><a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="mailto:you@example.com"><i class="fas fa-envelope"></i></a></li>
+    </ul>
+  </div>
+</body>
+</html>
