@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 version: "3.9"
+=======
+>>>>>>> d4b2558 (add the create project function)
 
 services:
   db:

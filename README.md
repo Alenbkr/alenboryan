@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Personal Portfolio Website
 
 Welcome to the repository of my personal portfolio website.
@@ -86,3 +87,6 @@ Feel free to reach out if you would like to collaborate or discuss an opportunit
 
 Email: add your email
 GitHub /
+=======
+# alenboryan
+>>>>>>> d4b2558 (add the create project function)
