@@ -5,21 +5,10 @@ from django.views.generic import ListView, DetailView
 
 from django.views.generic import ListView, DetailView, CreateView
 
-
-class ProjectListView(ListView):
-    model = Project
-    template_name = "projects/projects.html"  
-    context_object_name = "projects"  
-    ordering = ["-start_date"]  
-
-
-class ProjectDetailView(DetailView):
-    model = Project
-    template_name = "projects/project_detail.html"  
-    context_object_name = "project"
-    
-
-
+from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from .forms import ProjectForm
 
 
 from django.views.generic import ListView, DetailView, CreateView
@@ -27,8 +16,23 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .forms import ProjectForm
 
+from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from .forms import ProjectForm
 
+class ProjectListView(ListView):
+    model = Project
+    template_name = "projects/projects.html"  
+    context_object_name = "projects"  
+    ordering = ["-start_date"]  
 
+class ProjectDetailView(DetailView):
+    model = Project
+    template_name = "projects/project_detail.html"  
+    context_object_name = "project"
+    
+   
 
 class ProjectCreateView(LoginRequiredMixin, CreateView):
     model = Project
