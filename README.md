@@ -85,7 +85,7 @@ Provide a simple and elegant digital profile
 
 Feel free to reach out if you would like to collaborate or discuss an opportunity.
 
-Email: add your email
+Email: bkralen@gmail.com
 GitHub /
 =======
 # alenboryan
