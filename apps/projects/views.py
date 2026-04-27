@@ -1,25 +1,13 @@
 from django.shortcuts import render
 from .models import Project
-
-from django.views.generic import ListView, DetailView
-
-from django.views.generic import ListView, DetailView, CreateView
-
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .forms import ProjectForm
 
 
-from django.views.generic import ListView, DetailView, CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
-from .forms import ProjectForm
 
-from django.views.generic import ListView, DetailView, CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
-from .forms import ProjectForm
+
 
 class ProjectListView(ListView):
     model = Project

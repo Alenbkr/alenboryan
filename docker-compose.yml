@@ -1,7 +1,4 @@
-
 version: "3.9"
-
-
 
 services:
   db:
@@ -24,9 +21,10 @@ services:
     working_dir: /app
     ports:
       - "8000:8000"
+    env_file:
+      - .env
     depends_on:
       - db
 
 volumes:
   postgres_data:
-

@@ -1,18 +1,81 @@
-{% extends 'main/base.html' %}
-
-{% block title %}Home - Alen Boryan{% endblock %}
+{% extends "main/base.html" %}
+{% block title %}Alen – Digital Garden{% endblock %}
 
 {% block content %}
-<section class="hero">
-  <div class="hero__content">
-    <p class="hero__intro">Hi, my name is</p>
-    <h1 class="hero__name">Alen Boryan.</h1>
-    <h2 class="hero__subtitle">I build things for the web.</h2>
-    <p class="hero__description">
-      I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human‑centered products.
-    </p>
-   
-    <a href="{% url 'projects' %}" class="btn">Check out my work!</a>
+
+<section class="intro">
+  <div class="intro-tag">Hey there 👋</div>
+
+  <h1 class="intro-title">
+    I'm <span class="accent">Alen</span><br>
+    welcome to my digital garden 🌱
+  </h1>
+
+  <p class="intro-body">
+    I like <strong>building things</strong>, and I'm currently helping to build Mobbin.
+    In my free time, I enjoy brewing coffee, tending to my plants, and climbing
+    (plastic) rocks. I do some reading and writing as well—albeit not as consistently,
+    but I'm working on being better at that.
+  </p>
+
+  <div class="intro-footer">
+    <span class="pill">Design</span>
+    <span class="pill">Code</span>
+    <span class="pill">Coffee</span>
+    <span class="pill">Climbing</span>
   </div>
 </section>
+
+<section class="right">
+
+  <div class="section-header">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">
+      I like building things. Here are a few things I've built thus far.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="card-meta">Projects · Design Spells</div>
+      <h3 class="card-title">Design details that feel like magic.</h3>
+      <p class="card-text">
+        Magic in your mailbox, every alternate Saturday. A newsletter about tiny,
+        thoughtful design details.
+      </p>
+      <button class="btn-ghost">Subscribe →</button>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">Projects · Billbreak</div>
+      <h3 class="card-title">Let's Billbreak</h3>
+      <p class="card-text">
+        A tiny tool to make splitting bills with friends less painful and more fair.
+      </p>
+      <span class="badge">Product design</span>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">Projects · Fields of Chess</div>
+      <h3 class="card-title">Fields of Chess</h3>
+      <p class="card-text">
+        Generative chess posters inspired by the magic of black and white.
+      </p>
+      <span class="badge">Generative art</span>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">Writing · Blog</div>
+      <h3 class="card-title">What the heck is a digital garden?</h3>
+      <p class="card-text">
+        A short reflection on building a personal space on the web that grows over time.
+      </p>
+      <span class="badge">Essay</span>
+    </article>
+
+  </div>
+
+</section>
+
 {% endblock %}

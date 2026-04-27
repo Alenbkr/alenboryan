@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'apps.projects',
     'apps.contact', 
     'apps.main',
+    'apps.writing',
+    'apps.hobbies',  
+    'apps.reading',
 ]
 
 MIDDLEWARE = [
@@ -59,16 +62,20 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'alenboryanweb.urls'
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("POSTGRES_DB"),
-        'USER': os.getenv("POSTGRES_USER"),
-        'PASSWORD': os.getenv("POSTGRES_PASSWORD"),
-        'HOST': os.getenv("POSTGRES_HOST"),
-        'PORT': os.getenv("POSTGRES_PORT"),
+        'NAME': os.getenv("POSTGRES_DB", "db_alen"),
+        'USER': os.getenv("POSTGRES_USER", "alen"),
+        'PASSWORD': os.getenv("POSTGRES_PASSWORD", "alen123"),
+        'HOST': os.getenv("POSTGRES_HOST", "db"),
+        'PORT': os.getenv("POSTGRES_PORT", "5432"),
     }
 }
+
+
 
 TEMPLATES = [
     {
@@ -89,15 +96,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'alenboryanweb.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
